@@ -1,14 +1,13 @@
 #include <iostream>
-#include <queue>
+
 #include <unordered_map>
 #include <vector>
 
 using namespace std;
 
 unsigned long long number_of_frames = 0; // frames allocated to the process
-int *mem_ptr = NULL;
-bool *pres_ptr = NULL;
-void fifo();
+
+
 int main()
 {
 
@@ -218,7 +217,7 @@ int main()
             } else {
                 //debatable
                 time_min_idx++;
-                page_time_present[page] = time_idx++;
+                page_time_present[page] = time_idx; //major bugg caused by incrementing time_idx here
                 time_line[time_idx++] = page;
             }
 
@@ -370,14 +369,3 @@ int main()
     return 0;
 }
 
-void fifo(){
-    int scanned_page;
-
-    queue<int> q;
-    while(1) {
-        scanf("%d", &scanned_page);
-
-
-    }
-
-}
